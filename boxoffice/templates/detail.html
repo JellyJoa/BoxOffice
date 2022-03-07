@@ -34,11 +34,17 @@
           <tbody>
             <tr>
               <td>{{ movieNm }}({{ movieNmEn }})</td>
-              <td>{{ genre }}</td>
+              <td>{% for i in genre %}
+                  {{ i }}
+              {% endfor %}</td>
               <td>{{ openDt }}</td>
               <td>{{ showTm }}</td>
-              <td>{{ director }}</td>
-              <td>{{ actor }}</td>
+              <td>{% for i in director %}
+                  {{ i }}
+              {% endfor %}</td>
+              <td>{% for i in actor %}
+                  {{ i }}
+              {% endfor %}</td>
             </tr>
           </tbody>
         </table>
