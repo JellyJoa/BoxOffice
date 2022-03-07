@@ -35,15 +35,24 @@
             <tr>
               <td>{{ movieNm }}({{ movieNmEn }})</td>
               <td>{% for i in genre %}
-                  {{ i }}
+                  {% for key, value in i.items %}
+                  {{ value }}
+                      <br><br>
+              {% endfor %}
               {% endfor %}</td>
               <td>{{ openDt }}</td>
               <td>{{ showTm }}</td>
               <td>{% for i in director %}
-                  {{ i }}
+                  {% for key, value in i.items %}
+                  {{ value }}
+                      <br><br>
+                  {% endfor %}
               {% endfor %}</td>
               <td>{% for i in actor %}
-                  {{ i }}
+                  {% for key, value in i.items %}
+                  {{ value }}
+                      <br><br>
+                      {% endfor %}
               {% endfor %}</td>
             </tr>
           </tbody>
