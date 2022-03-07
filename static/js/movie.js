@@ -33,6 +33,7 @@ function boxoffice_daily() {
                     let rankTd = $('<td></td>').text(result['boxOfficeResult']['dailyBoxOfficeList'][i]['rank'])
                     let imgTd = $('<td></td>>')
                     let searchTitle = result['boxOfficeResult']['dailyBoxOfficeList'][i]['movieNm'] + " 포스터 사진"
+                    let movieCode = result['boxOfficeResult']['dailyBoxOfficeList'][i]['movieCd']
                     let img = $('<img />')
                     imgTd.append(img)
                     $.ajax({
@@ -63,7 +64,7 @@ function boxoffice_daily() {
 
                     detailBtn.addClass('btn btn-warning')
                     detailBtn.on('click',function(){
-                        alert('상세보기 버튼 눌림')
+                        document.location.href='/movie/' + movieCode + '/detail/'
                     })
 
                     detailTd.append(detailBtn)
@@ -112,6 +113,7 @@ function boxoffice_weekly(){
                     let rankTd = $('<td></td>').text(result['boxOfficeResult']['weeklyBoxOfficeList'][i]['rank'])
                     let imgTd = $('<td></td>>')
                     let searchTitle = result['boxOfficeResult']['weeklyBoxOfficeList'][i]['movieNm'] + " 포스터"
+                    let movieCode = result['boxOfficeResult']['weeklyBoxOfficeList'][i]['movieCd']
                     let img = $('<img />')
                     imgTd.append(img)
                     $.ajax({
@@ -137,6 +139,13 @@ function boxoffice_weekly(){
                     })
                     let titleTd = $('<td></td>').text(result['boxOfficeResult']['weeklyBoxOfficeList'][i]['movieNm'])
                     let openTd = $('<td></td>').text(result['boxOfficeResult']['weeklyBoxOfficeList'][i]['openDt'])
+                    let detailTd = $('<td></td>')
+                    let detailBtn = $('<input/>').attr('type','button').attr('value','상세보기')
+
+                    detailBtn.addClass('btn btn-warning')
+                    detailBtn.on('click',function(){
+                        document.location.href='/movie/' + movieCode + '/detail/'
+                    })
 
                     tr.append(rankTd)
                     tr.append(imgTd)
