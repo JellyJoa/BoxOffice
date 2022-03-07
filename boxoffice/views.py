@@ -11,19 +11,24 @@ def get_movieInfo(request, movieCd):
     d = json.loads(text)
 
     movieInfo = d['movieInfoResult']['movieInfo']
-    movieNm = d['movieInfoResult']['movieInfo']['movieNm']
-    movieNmEn = d['movieInfoResult']['movieInfo']['movieNmEn']
-    openDt = d['movieInfoResult']['movieInfo']['openDt']
-    # nation = d['movieInfoResult']['movieInfo']['nations']['nation']['nationNm']
-    # genre1 = d['movieInfoResult']['movieInfo']['genres'][1]['genreNm']
-    # genre2 = movieInfo['genres'][2]['genreNm']
+    movieNm = movieInfo['movieNm']
+    movieNmEn = movieInfo['movieNmEn']
+    openDt = movieInfo['openDt']
+    nation = movieInfo['nations']
+    genre = movieInfo['genres']
+    showTm = movieInfo['showTm']
+    director = movieInfo['directors']
+    actor = movieInfo['actors']
 
     context = {
         'movieNm': movieNm,
         'movieNmEn': movieNmEn,
         'openDt': openDt,
-        # 'nation': nation,
-        # 'genre1': genre1,
+        'nation': nation,
+        'genre': genre,
+        'showTm': showTm,
+        'director': director,
+        'actor': actor
 
     }
 

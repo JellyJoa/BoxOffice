@@ -147,11 +147,14 @@ function boxoffice_weekly(){
                         document.location.href='/movie/' + movieCode + '/detail/'
                     })
 
+                    detailTd.append(detailBtn)
                     tr.append(rankTd)
                     tr.append(imgTd)
                     tr.append(titleTd)
                     tr.append(openTd)
+                    tr.append(detailBtn)
                     $('tbody').append(tr)
+
                 }
             },
             error : function (){

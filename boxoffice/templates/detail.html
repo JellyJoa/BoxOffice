@@ -23,20 +23,22 @@
           <thead>
             <tr>img</tr>
             <tr>
-              <th scope="col">title</th>
-              <th scope="col">en-title</th>
-              <th scope="col">제작년도</th>
+              <th scope="col">제목</th>
               <th scope="col">장르</th>
+              <th scope="col">개봉일</th>
+              <th scope="col">상영시간</th>
               <th scope="col">감독</th>
+              <th scope="col">배우</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-{#              <td>1,001</td>#}
-{#              <td>random</td>#}
-{#              <td>data</td>#}
-{#              <td>placeholder</td>#}
-{#              <td>text</td>#}
+              <td>{{ movieNm }}({{ movieNmEn }})</td>
+              <td>{{ genre }}</td>
+              <td>{{ openDt }}</td>
+              <td>{{ showTm }}</td>
+              <td>{{ director }}</td>
+              <td>{{ actor }}</td>
             </tr>
           </tbody>
         </table>
