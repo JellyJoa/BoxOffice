@@ -35,30 +35,3 @@ def get_movieInfo(request, movieCd):
 
 
     return render(request, 'detail.html', context)
-
-
-def get_movieList(request, movieNm):
-    url = 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=cdf22d2649b0a1d669e81243e41dcb4d&movieNm=' + movieNm
-    res = requests.get(url)
-    text = res.text
-
-    d = json.loads(text)
-
-    movieList = d['movieListResult']['movieList']['movie']
-    movieNmEn = movieList['movieNmEn']
-    prdtYear = movieList['prdtYear']
-    nation = movieList['nationAlt']
-    genre = movieList['genreAlt']
-    director = d['movieListResult']['movieList']['directors']
-
-    context = {
-        'movieNm': movieNm,
-        'movieNmEn': movieNmEn,
-        'prdtYear': prdtYear,
-        'nation': nation,
-        'genre': genre,
-        'director': director
-
-    }
-
-    return render(request, 'list.html', context)
