@@ -43,12 +43,14 @@
   </button>
 
 {#  검색  #}
-  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="영화 제목">
+
+  <input id="searchMovie" class="form-control form-control-dark w-100" type="search" autocomplete="on" placeholder="Search" aria-label="영화 제목" name="search">
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="#">검색</a>
+      <a class="nav-link px-3" onclick="search_mlist()">검색</a>
     </div>
   </div>
+
 </header>
 
 {# 메뉴 #}
