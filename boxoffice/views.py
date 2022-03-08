@@ -33,5 +33,4 @@ def get_movieInfo(request, movieCd):
     }
 
 
-
     return render(request, 'detail.html', context)
